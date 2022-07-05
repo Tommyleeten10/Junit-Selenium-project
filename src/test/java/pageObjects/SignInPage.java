@@ -14,9 +14,9 @@ public class SignInPage extends BasePage {
         super(driver);
     }
 
-    private static final By EMAIL_ADDRESS_INPUT_BOX = By.cssSelector("input#email_create");
-    private static final By CREATE_NEW_ACCOUNT_BUTTON = By.cssSelector("button#SubmitCreate");
-    private static final By ALREADY_REGISTERED_ALERT = By.cssSelector("div#create_account_error");
+    private static final By EMAIL_ADDRESS_INPUT_BOX = By.cssSelector("#login-form>section>div:nth-child(2)> div.col-md-6>input");
+    private static final By CREATE_NEW_ACCOUNT_BUTTON = By.cssSelector("#content > div > a");
+    private static final By ALREADY_REGISTERED_ALERT = By.cssSelector("#customer-form > section > div.form-group.row.has-error > div.col-md-6 > div > ul > li");
 
     public void enterEmailAddress(String emailAddress){
         findAndType(EMAIL_ADDRESS_INPUT_BOX, emailAddress);
