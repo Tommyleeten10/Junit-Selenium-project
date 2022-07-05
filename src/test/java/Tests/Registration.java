@@ -1,7 +1,9 @@
 package Tests;
 
 import org.junit.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pageObjects.ShoppingCartPage;
 import pageObjects.CreateNewAccountPage;
 import pageObjects.HomePage;
@@ -61,6 +63,28 @@ public class Registration {
      */
     @Test @Ignore
     public void registerAsNewUser(){
+
+        homepage.navigateToSignInPage();
+        WebElement CreateNewAccount = driver.findElement(By.cssSelector("#content > div a"));
+        CreateNewAccount.click();
+
+        WebElement socialTitle = driver.findElement(By.cssSelector("#customer-form > section > div:nth-child(2) > div.col-md-6.form-control-valign > label:nth-child(1) > span > input[type=radio"));
+        socialTitle.click();
+
+        WebElement UserFirstName = driver.findElement(By.cssSelector("#customer-form > section > div:nth-child(3) > div.col-md-6 > input"));
+        UserFirstName.sendKeys("Tommy");
+
+        WebElement UserLastName = driver.findElement(By.cssSelector("#customer-form > section > div:nth-child(4) > div.col-md-6 > input"));
+        UserLastName.sendKeys("Lee");
+
+        WebElement UserEmail = driver.findElement(By.cssSelector("#customer-form > section > div:nth-child(5) > div.col-md-6 > input"));
+        UserEmail.sendKeys("Tommyisking@gmail.com");
+
+        WebElement UserPassword = driver.findElement(By.cssSelector("#customer-form > section > div:nth-child(6) > div.col-md-6 > div > input"));
+        UserPassword.sendKeys("Ten10");
+
+        WebElement UserDateOfBirth = driver.findElement(By.cssSelector("#customer-form > section > div:nth-child(7) > div.col-md-6 > input"));
+        UserDateOfBirth.sendKeys("08/23/1985");
 
     }
 
