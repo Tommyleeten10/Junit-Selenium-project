@@ -3,7 +3,10 @@ package Tests;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import pageObjects.ShoppingCartPage;
 import pageObjects.HomePage;
 import pageObjects.SignInPage;
@@ -44,6 +47,10 @@ public class BuyJourney {
      */
     @Test @Ignore
     public void addProductToCartFromHomepage(){
+        WebElement element = driver.findElement(By.cssSelector("[Alt = 'Printed Chiffon Dress']"));
+        Actions action = new Actions(driver) ;
+        action.moveToElement(element).perform();
+        element.click();
 
     }
 
